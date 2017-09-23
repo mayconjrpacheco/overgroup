@@ -48,7 +48,7 @@ gulp.task('component', () => {
 	var dist = path.join('src/app/core/components', name)
 	var nameUpper = name.charAt(0).toUpperCase() + name.slice(1);
 
-	gulp.src('src/generator/component/*.**')
+	gulp.src('generator/component/*.**')
 		.pipe(template({
 			lowercase_name: name,
 			uppercase_name: nameUpper
@@ -63,10 +63,11 @@ gulp.task('component', () => {
 
 gulp.task('module', () => {
 	var name = yargs.argv.name;
-	var dist = path.join('src/app/modules', name)
+	var pathParent = yargs.argv.path || '';
+	var dist = path.join('src/app/modules', pathParent, name)
 	var nameUpper = name.charAt(0).toUpperCase() + name.slice(1);
 
-	gulp.src('src/generator/module/*.**')
+	gulp.src('generator/module/*.**')
 		.pipe(template({
 			lowercase_name: name,
 			uppercase_name: nameUpper

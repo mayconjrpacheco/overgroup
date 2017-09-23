@@ -356,7 +356,10 @@ module.exports = {
       },
       {
         "test": /\.ts$/,
-        "loader": "@ngtools/webpack"
+        "loader": "@ngtools/webpack",
+        "exclude": [
+          path.join(process.cwd(), "src/geneator")
+        ]
       }
     ]
   },

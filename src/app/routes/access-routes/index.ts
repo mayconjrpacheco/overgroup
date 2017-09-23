@@ -5,7 +5,7 @@ import { SignupComponent } from '@modules/access/signup/signup';
 
 export const ACCESS_ROUTES: Routes = [
 	{
-		path: '',
+		path: 'access',
 		component: AccessComponent,
 		children: [
 			{
